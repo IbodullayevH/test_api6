@@ -10,7 +10,10 @@
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
         "strict": false,
-        "skipLibCheck": true
+        "diagnostics": true,
+        "pretty": true,
+        "skipLibCheck": true,
+        "removeComments": true
     },
     "include": [
         "src/**/*"
