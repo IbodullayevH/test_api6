@@ -1,7 +1,7 @@
-import { AppDataSource } from "config/typeorm.config";
-import { User } from "entities";
-import { ErrorHandler } from "errors";
-import { IRequestResponseNext } from "interfaces";
+import { AppDataSource } from "../config/typeorm.config";
+import { User } from "../entities";
+import { ErrorHandler } from "../errors";
+import { IRequestResponseNext } from "../interfaces";
 
 
 export class UserController {

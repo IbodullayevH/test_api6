@@ -1,4 +1,4 @@
-import { UserRole } from "entities/user-role.enum";
+import { UserRole } from "../entities/user-role.enum";
 
 export interface IUser {
     id: number;
