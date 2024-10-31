@@ -1,7 +1,8 @@
-import { AppDataSource } from "src/config/typeorm.config";
-import { User } from "src/entities";
-import { ErrorHandler } from "src/errors";
-import { IRequestResponseNext } from "src/interfaces";
+import { AppDataSource } from "config/typeorm.config";
+import { User } from "entities";
+import { ErrorHandler } from "errors";
+import { IRequestResponseNext } from "interfaces";
+
 
 export class UserController {
     static async allUsersData({ req, res, next }: IRequestResponseNext) {
@@ -19,5 +20,5 @@ export class UserController {
         }
     }
 
-    
+
 }

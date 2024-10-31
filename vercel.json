@@ -9,11 +9,11 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "src/index.ts"
+      "dest": "index.ts"
     }
   ],
   "env": {
     "PORT": "5005",
-    "DB_URL": "postgres://postgres:8077@localhost:5432/api_2"
+    "DB_URL": "postgres://default:oXqGTj14MFQl@ep-patient-smoke-a7tp0szx.ap-southeast-2.aws.neon.tech:5432/verceldb?sslmode=require"
   }
 }

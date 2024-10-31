@@ -24,14 +24,15 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppDataSource = void 0;
+require("reflect-metadata");
 const typeorm_1 = require("typeorm");
 require("dotenv/config");
 const entities = __importStar(require("../entities"));
 exports.AppDataSource = new typeorm_1.DataSource({
     type: "postgres",
     url: process.env.DB_URL,
-    synchronize: true,
-    // logging: true,
+    synchronize: false,
+    logging: false,
     entities: Object.values(entities),
     subscribers: [],
     migrations: [],

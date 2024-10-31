@@ -10,9 +10,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserController = void 0;
-const typeorm_config_1 = require("src/config/typeorm.config");
-const entities_1 = require("src/entities");
-const errors_1 = require("src/errors");
+const typeorm_config_1 = require("config/typeorm.config");
+const entities_1 = require("entities");
+const errors_1 = require("errors");
 class UserController {
     static allUsersData(_a) {
         return __awaiter(this, arguments, void 0, function* ({ req, res, next }) {

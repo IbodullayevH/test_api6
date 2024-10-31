@@ -1,8 +1,9 @@
+import "reflect-metadata"
 import express, { Application } from "express";
 import "dotenv/config";
-import router from "./routes"; 
-import { ErrorHandlerMiddleware } from "./middlewares"; 
-import { AppDataSource } from "./config/typeorm.config"; 
+import router from "./routes";
+import { ErrorHandlerMiddleware } from "./middlewares";
+import { AppDataSource } from "./config/typeorm.config";
 
 const app: Application = express();
 
@@ -12,7 +13,7 @@ app.use(router);
 // salom
 const startServer = async () => {
     try {
-        await AppDataSource.initialize(); 
+        await AppDataSource.initialize();
         console.log(`Database connected!`);
 
         const port = process.env.PORT || 5000;
