@@ -1,0 +1,20 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "index.ts",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "index.ts"
+      }
+    ],
+    "env": {
+      "PORT": "5005",
+      "DB_URL": "postgres://postgres:8077@localhost:5432/api_2"
+    }
+  }
+  
