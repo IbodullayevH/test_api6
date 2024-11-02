@@ -6,15 +6,7 @@
         "experimentalDecorators": true,
         "rootDir": "./src",
         "outDir": "./dist",
-        "baseUrl": "./src",
-        "paths": {
-            "*": [
-                "*"
-            ],
-            "src/*": [
-                "*"
-            ]
-        },
+        "baseUrl": "./",
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
         "strict": false,
