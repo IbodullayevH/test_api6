@@ -1,12 +1,15 @@
-import { IUser } from './../interfaces/user.interface';
 import { ErrorHandler } from "../errors";
 import { IRequestResponseNext } from "../interfaces";
 import userService from 'src/services/user.service';
+import { Request } from 'express';
+import { Response } from 'express';
+import { NextFunction } from 'express';
+import { IUser } from "../interfaces";
 
 export class UserController {
 
     // all users
-    static async allUsersData({ req, res, next }: IRequestResponseNext) {
+    static async allUsersData(req: Request, res: Response, next: NextFunction) {
         try {
             const allUsers = await userService.getAllUsers()
 
@@ -21,17 +24,47 @@ export class UserController {
     }
 
     // create new user
-    static async newUser({ req, res, next }: IRequestResponseNext) {
+    static async newUser(req: Request, res: Response, next: NextFunction) {
         try {
             const userData: IUser = req.body
-            const newUser = userService.createUser(userData)
+            const newUser = await userService.createUser(userData)
 
             res.status(201).send({
-                message: "New user Successfully created",
+                message: "New user successfully created",
                 data: newUser
             });
         } catch (error: any) {
             next(new ErrorHandler(error.message, error.status || 400));
+        }
+    }
+
+    static async updateUserData(req: Request, res: Response, next: NextFunction) {
+        try {
+            const userData: IUser = req.body
+            const { id } = req.params
+            const updatedUser = await userService.updateUser(+id, userData)
+
+            res.status(200).send({
+                message: "User data successfully updated",
+                data: updatedUser
+            });
+        } catch (error: any) {
+            next(new ErrorHandler(error.message, error.status || 400));
+        }
+    }
+
+
+    static async deleteUser(req: Request, res: Response, next: NextFunction) {
+        try {
+            const { id } = req.params
+            await userService.removeUser(+id)
+
+            res.status(200).send({
+                message: "User successfully deleted"
+            });
+        } catch (error: any) {
+            next(new ErrorHandler(error.message, error.status || 400));
+
         }
     }
 }

@@ -6,7 +6,7 @@ import * as entities from '../entities';
 export const AppDataSource = new DataSource({
     type: "postgres",
     url: process.env.DB_URL,
-    synchronize: false,
+    synchronize: true,
     logging: false,
     entities: Object.values(entities),
     subscribers: [],
