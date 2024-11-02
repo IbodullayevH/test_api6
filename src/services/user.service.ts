@@ -1,8 +1,8 @@
-import { AppDataSource } from "src/config/typeorm.config";
-import { User } from "src/entities";
-import { UserRole } from "src/entities/user-role.enum";
-import { ErrorHandler } from "src/errors";
-import { IUser } from "src/interfaces";
+import { AppDataSource } from "../config/typeorm.config";
+import { User } from "../entities";
+import { UserRole } from "../entities/user-role.enum";
+import { ErrorHandler } from "../errors";
+import { IUser } from "../interfaces";
 
 class UserService {
     private userRepository = AppDataSource.getRepository(User)

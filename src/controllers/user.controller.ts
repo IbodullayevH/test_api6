@@ -1,10 +1,9 @@
 import { ErrorHandler } from "../errors";
-import { IRequestResponseNext } from "../interfaces";
-import userService from 'src/services/user.service';
 import { Request } from 'express';
 import { Response } from 'express';
 import { NextFunction } from 'express';
 import { IUser } from "../interfaces";
+import userService from "../services/user.service";
 
 export class UserController {
 
