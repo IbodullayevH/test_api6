@@ -7,7 +7,7 @@ export class Product {
     @PrimaryGeneratedColumn({ type: "int" })
     id: number;
 
-    @Column({ unique: true, nullable: true, type: "varchar", length: 255 })
+    @Column({nullable: true, type: "varchar", length: 255 })
     name: string;
 
     @Column({ nullable: true, type: "text" })

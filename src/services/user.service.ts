@@ -3,6 +3,7 @@ import { User } from "../entities";
 import { UserRole } from "../entities/user-role.enum";
 import { ErrorHandler } from "../errors";
 import { IUser } from "../interfaces";
+import * as bcrypt from "bcrypt"
 
 class UserService {
     private userRepository = AppDataSource.getRepository(User)
@@ -19,12 +20,25 @@ class UserService {
             throw new Error("Only one admin");
         }
 
+        const hashedPassword = await bcrypt.hash(`${userData.password}`, 10)
+        userData.password = hashedPassword
+
         const newUser = this.userRepository.create(userData)
-        return await this.userRepository.save(newUser);
+        const savedUser = await this.userRepository.save(newUser);
+        const { password, ...result } = savedUser
+        return result
     }
 
     async getAllUsers() {
-        return await this.userRepository.find();
+        return await this.userRepository.find({
+            select: {
+                id: true,
+                login: true,
+                password: false,
+                address: true,
+                role: true
+            }
+        })
     }
 
     async getUserById(id: number) {
@@ -46,7 +60,7 @@ class UserService {
         }
 
         const { role, ...updateData } = userData;
-       
+
         await this.userRepository.update(id, updateData)
         return await this.userRepository.findOneBy({ id })
     }

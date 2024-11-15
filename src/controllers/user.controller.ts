@@ -1,7 +1,5 @@
+import { NextFunction, Request, Response } from "express";
 import { ErrorHandler } from "../errors";
-import { Request } from 'express';
-import { Response } from 'express';
-import { NextFunction } from 'express';
 import { IUser } from "../interfaces";
 import userService from "../services/user.service";
 
@@ -37,6 +35,7 @@ export class UserController {
         }
     }
 
+    // update users
     static async updateUserData(req: Request, res: Response, next: NextFunction) {
         try {
             const userData: IUser = req.body
