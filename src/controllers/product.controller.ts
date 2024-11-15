@@ -1,7 +1,7 @@
 import productService from "services/product.service";
 import { ErrorHandler } from "../errors";
 import { NextFunction, Request, Response } from "express";
-import { IProduct } from "interfaces/product.interface";
+import { IProduct } from "interfaces";
 
 export class ProductsController {
 
