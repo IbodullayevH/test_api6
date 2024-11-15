@@ -1,8 +1,8 @@
 import { Router } from "express";
 import { UserController } from "../controllers";
-import verificationToken from "auth/verification.token";
-import LoginUser from "auth/login";
-import verifyRole from "auth/verificationrole";
+import verificationToken from "../auth/verification.token";
+import LoginUser from "../auth/login";
+import verifyRole from "../auth/verificationrole";
 
 
 const userRouter = Router();

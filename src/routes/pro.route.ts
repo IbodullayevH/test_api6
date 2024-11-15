@@ -1,6 +1,6 @@
-import verificationToken from "auth/verification.token";
-import verifyRole from "auth/verificationrole";
-import { ProductsController } from "controllers";
+import verificationToken from "../auth/verification.token";
+import verifyRole from "../auth/verificationrole";
+import { ProductsController } from "../controllers";
 import { Router } from "express";
 const proRoute: Router = Router()
 
