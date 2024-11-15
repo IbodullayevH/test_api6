@@ -1,7 +1,7 @@
+import { ErrorHandler } from "../errors/";
 import { AppDataSource } from "../config/typeorm.config";
 import { User } from "../entities";
 import { UserRole } from "../entities/user-role.enum";
-import { ErrorHandler } from "../errors";
 import { IUser } from "../interfaces";
 import * as bcrypt from "bcrypt"
 
