@@ -1,7 +1,7 @@
-import { IProduct } from "interfaces";
+import { IProduct } from "../interfaces";
 import { AppDataSource } from "../config/typeorm.config";
 import { ErrorHandler } from "../errors";
-import { Product } from "entities";
+import { Product } from "../entities";
 
 class ProductService {
     private productRepository = AppDataSource.getRepository(Product)
